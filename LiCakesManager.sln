@@ -5,6 +5,16 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiCakes.Api", "LiCakes.Api\LiCakes.Api.csproj", "{64597562-8EAF-4DF6-A310-99E99E38D881}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiCakes.Infra.Data", "LiCakes.Infra.Data\LiCakes.Infra.Data.csproj", "{4FFCA9B5-9686-4E25-9C9B-E86E94AC1A9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiCakes.Domain", "LiCakes.Domain\LiCakes.Domain.csproj", "{41D1694E-4C91-426C-AF67-0C2379EFC2E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiCakes.Application", "LiCakes.Application\LiCakes.Application.csproj", "{B8E35D3A-3AC4-4EC8-B186-68A920BFB3AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4FC85108-6551-4B48-AB40-D38FF2ECB3E8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiCakes.UnitTests", "LiCakes.UnitTests\LiCakes.UnitTests.csproj", "{694EB3D6-3E90-42E5-B4AC-2EB325231AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +25,28 @@ Global
 		{64597562-8EAF-4DF6-A310-99E99E38D881}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64597562-8EAF-4DF6-A310-99E99E38D881}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64597562-8EAF-4DF6-A310-99E99E38D881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FFCA9B5-9686-4E25-9C9B-E86E94AC1A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FFCA9B5-9686-4E25-9C9B-E86E94AC1A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FFCA9B5-9686-4E25-9C9B-E86E94AC1A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FFCA9B5-9686-4E25-9C9B-E86E94AC1A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D1694E-4C91-426C-AF67-0C2379EFC2E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D1694E-4C91-426C-AF67-0C2379EFC2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D1694E-4C91-426C-AF67-0C2379EFC2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D1694E-4C91-426C-AF67-0C2379EFC2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8E35D3A-3AC4-4EC8-B186-68A920BFB3AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8E35D3A-3AC4-4EC8-B186-68A920BFB3AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8E35D3A-3AC4-4EC8-B186-68A920BFB3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8E35D3A-3AC4-4EC8-B186-68A920BFB3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694EB3D6-3E90-42E5-B4AC-2EB325231AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694EB3D6-3E90-42E5-B4AC-2EB325231AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694EB3D6-3E90-42E5-B4AC-2EB325231AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694EB3D6-3E90-42E5-B4AC-2EB325231AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{694EB3D6-3E90-42E5-B4AC-2EB325231AED} = {4FC85108-6551-4B48-AB40-D38FF2ECB3E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B93D3EB-441F-4055-827C-C4BB154854D8}
