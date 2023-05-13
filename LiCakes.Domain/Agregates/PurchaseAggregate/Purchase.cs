@@ -1,12 +1,13 @@
-﻿using LiCakes.Domain.Interfaces.Repositories;
+﻿using LiCakes.Domain.Entities;
+using LiCakes.Domain.SeedWork;
 
-namespace LiCakes.Domain.Entities
+namespace LiCakes.Domain.Aggregates.PurchaseAgregate
 {
-  public class Purchase : BaseEntity<long>, IEntity
+  public class Purchase : BaseEntity<long>, IAggregateRoot
   {
     public string Supplier { get; private set; }
     public DateOnly PurchaseDate { get; private set; }
-    public decimal TotalValue { get; private set; }
+    public decimal TotalValue => _itens.Sum(x => x.Price);
 
     private readonly List<PurchaseMaterial> _itens;
     public IReadOnlyCollection<PurchaseMaterial> Itens => _itens;
@@ -18,9 +19,9 @@ namespace LiCakes.Domain.Entities
       _itens = new List<PurchaseMaterial>();
     }
 
-    public void AddItens(PurchaseMaterial material)
+    public void AddItens(Material material, int quantity, decimal price)
     {
-      _itens.Add(material);
+      _itens.Add(new PurchaseMaterial(Id, material.Id, quantity, price));
     }
   }
 }

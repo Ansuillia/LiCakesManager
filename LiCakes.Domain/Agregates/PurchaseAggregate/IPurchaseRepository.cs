@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LiCakes.Domain.Interfaces.Repositories
+namespace LiCakes.Domain.Agregates.PurchaseAggregate
 {
-  public interface IEntity
+  internal interface IPurchaseRepository
   {
   }
 }

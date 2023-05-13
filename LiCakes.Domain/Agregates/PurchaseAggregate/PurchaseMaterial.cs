@@ -1,6 +1,6 @@
-﻿using LiCakes.Domain.Interfaces.Repositories;
+﻿using LiCakes.Domain.SeedWork;
 
-namespace LiCakes.Domain.Entities
+namespace LiCakes.Domain.Aggregates.PurchaseAgregate
 {
   public class PurchaseMaterial : BaseEntity<long>, IEntity
   {
@@ -14,12 +14,6 @@ namespace LiCakes.Domain.Entities
       PurchaseId = purchaseId;
       MaterialId = materialId;
       Price = price;
-
-      if(quantity <= 0)
-      {
-        throw new ArgumentException("Quantity should be greater than 0");
-      }
-
       Quantity = quantity;
     }
   }

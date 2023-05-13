@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using LiCakes.Application.Services.Interfaces;
-using LiCakes.Domain.Entities;
-using LiCakes.Infra.Data;
+using LiCakes.Domain.Aggregates.ProductAggregate;
+using LiCakes.Domain.Agregates;
+using LiCakes.Domain.SeedWork;
 using LiCakes.Infra.Data.DTOs;
 
 namespace LiCakes.Application.Services
 {
-  public class ProductService : IProductService
+    public class ProductService : IProductService
   {
     private readonly IUnitOfWork _uow;
     private readonly IMapper _mapper;
@@ -20,15 +21,24 @@ namespace LiCakes.Application.Services
     {
       if (product == null)
         throw new ArgumentNullException(nameof(product));
+
       try
       {
-        var newProduct = _mapper.Map<Product>(product);
+        Category category = null;
 
-        await _uow.ProductRepository.Create(newProduct);
+        if (string.IsNullOrWhiteSpace(product.Category))
+          category = await _uow.ProductRepository.FindOrCreateCategory("Default", "Deafault category");
+        else
+          category = await _uow.ProductRepository.FindOrCreateCategory(product.Category, "");
+
+        var newProduct = _mapper.Map<Product>(product);
+        newProduct.AddCategory(category);
+
+        var inserted = await _uow.ProductRepository.CreateAsync(newProduct);
 
         _uow.Commit();
 
-        return _mapper.Map<ProductDTO>(newProduct);
+        return _mapper.Map<ProductDTO>(inserted);
       }
       catch (Exception)
       {

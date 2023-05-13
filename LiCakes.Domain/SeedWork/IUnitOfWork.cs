@@ -1,6 +1,6 @@
-﻿using LiCakes.Domain.Interfaces.Repositories;
+﻿using LiCakes.Domain.Aggregates.ProductAggregate;
 
-namespace LiCakes.Infra.Data
+namespace LiCakes.Domain.SeedWork
 {
   public interface IUnitOfWork : IDisposable
   {

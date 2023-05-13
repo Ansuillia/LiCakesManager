@@ -15,7 +15,6 @@ namespace LiCakes.Infra.Data.DTOs
 
     public decimal Price { get; set; }
 
-    [JsonConverter(typeof(JsonStringEnumConverter))]
-    public EnumCategory Category { get; set; }
+    public string Category { get; set; }
   }
 }

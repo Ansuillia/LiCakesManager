@@ -1,6 +1,6 @@
-﻿using LiCakes.Domain.Interfaces.Repositories;
+﻿using LiCakes.Domain.Aggregates.ProductAggregate;
+using LiCakes.Domain.SeedWork;
 using LiCakes.Infra.Data.Interfaces;
-using LiCakes.Infra.Data.Repositories;
 
 namespace LiCakes.Infra.Data
 {

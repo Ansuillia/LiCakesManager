@@ -1,8 +1,7 @@
-﻿using LiCakes.Domain.Entities;
+﻿using LiCakes.Domain.Aggregates.PurchaseAgregate;
 using LiCakes.Infra.Data.Converters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace LiCakes.Infra.Data.Configurations
 {
@@ -14,6 +13,9 @@ namespace LiCakes.Infra.Data.Configurations
       builder.Property(x => x.Supplier)
         .IsRequired()
         .HasMaxLength(150);
+
+      builder.Property(x => x.TotalValue)
+        .HasColumnType("decimal(10,2)");
 
       builder.Property(x => x.PurchaseDate)
         .HasConversion<DateOnlyConverter, DateOnlyComparer>()

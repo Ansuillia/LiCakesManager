@@ -1,5 +1,6 @@
-﻿using LiCakes.Domain.Interfaces.Repositories;
+﻿using LiCakes.Domain.Aggregates.ProductAggregate;
 using LiCakes.Domain.Models;
+using LiCakes.Domain.SeedWork;
 using LiCakes.Infra.Data.Context;
 using LiCakes.Infra.Data.Interfaces;
 using LiCakes.Infra.Data.Repositories;
@@ -37,7 +38,7 @@ namespace LiCakes.Infra.Data
 
     public static void AddUnitOfWork(this IServiceCollection services)
     {
-      services.AddTransient<IUnitOfWork, UnitOfWork>();
+      services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
   }
 }

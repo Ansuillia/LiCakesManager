@@ -1,11 +1,6 @@
-﻿using LiCakes.Domain.Entities;
+﻿using LiCakes.Domain.Aggregates.ProductAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LiCakes.Infra.Data.Configurations
 {
@@ -26,9 +21,6 @@ namespace LiCakes.Infra.Data.Configurations
         .HasDefaultValue(0)
         .HasColumnType("decimal(10,2)");
 
-      builder.HasOne(x => x.Category)
-        .WithMany(x => x.Products)
-        .IsRequired();
     }
   }
 }
